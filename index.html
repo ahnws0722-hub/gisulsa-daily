@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="기술사 한 줄">
+<meta name="theme-color" content="#FFF4E0">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAVAUlEQVR4nO2daXgUVbrH/1XVS/a1CQmBsO9hFZBlAEEuggo6bgjiOOODC24w6Igz6HgRro6oc3muI/iIw1wV3FBhlNHBC3kQCCAYwhI22RK2xJCNJJD0UlX3Q5qQdOp0V1XXqa7A+X0hVFdXnarzP+/7nvcszS2YKYPBUIKPdAEY1oWJg0GEiYNBhImDQYSJg0GEiYNBhImDQYSJg0GEiYNBhImDQYSJg0GEiYNBhImDQcQW6QL4WTx7cKSLYC1eXL4n0kUAF6khe6YGTUREK2aLg2kiTMxUiXniYLIwEHMkYoY4mCwoQVsidMXBZGEC9CRCsSvLlGEO9N4zLXEwZZgJpbdtvFthsoggxroYgy0HU0ZkMfb9GykOpgwrYGAtGCYOpgzrYFRdGCMOpgyrYUiNGCAOpgxrEn69sCF7BpFwxcHMhpUJs3bCEgdThvUJp470i4Mpo7Wgu6ZYzMEgolMczGy0LvTVF7McDCJ6xMHMRmtER60xy8EgolkczGy0XrTWHbMcDCJMHAwi2sTBfEprR1MNMsvBIMLEwSDCxMEgwsTBIKJhaYI50eiPR/iTxXzTMnFAVpo8qq9I6Y6rc2zf5wlRDjk2CjFOxDjlhBhMHubrmtH6fjLgXBn35N8c1Ze5pgd5HlOGi3Pu9DYeUbmCwSr7czTy1DvOOnfgQZ7H3mV1PB0zt2aLcPx84KUPFnHLn/FQuR9NThTzLZ8FQN7Pet6d5dyK26twUJLgpWM4yqs5xbcZG03ldrSRCcZOnw20nOUwmZ1HlJtHjNPkguCXSm7FdzafCKcdDjucNjjtcnwMbh0mJsRExsFd7+L4YqvyG/hmp/DwLVyntubVSs5e4dPNCoWp9+C3E32mFaMpasXh9lWMnBsVEOloxWFDm0R5aE/p8du87dtEPtwrKOR3H1W2HF4fXlnlWPF7t2CW473cItJqQNHPmoPaR6/zXAhTGQA8Ppwr59ZtFx543Rn+1cJElPDap/YgJ+w6yr/8ocO08pBEYBNMK0Ig6tuFkQ29vJpb/2PkHhoA8PY6+76TIR5/3XZh0Wq7KJlRHq9PubW0CnEYzOHTkewordxge//fqlzqZz/YZv23s7KWup0jWQ5H5MLCiNUQycXSxidiyef2v34ZzKEEsPsof8fLzm930W3C9QRxxEdHLDhTLw6Dm060ed78KgWF/L2LnR9uJDbGzFTlmqio4Z5/3/HIUmdBIa3mVF6t/IbjIpdxUfuoUXZXvKG97TaJpjaIE8XcCysdM/7iPHaO+MhThov/XFg/uBsxxNhxiL//VecTbztIfZxwKLuoLA5jX7sm1Dq0KHvqjqX1Wq9+upS77aUoxbRdmyQznlmSkHtI+GKLkLNPIGUPGxjRW1r4G4/DhmVPe2a/7cg/Tqz+LQeELQeELhnyvaN9k4aKRqn8AkEcJreiptCNdlITiA/WMY3iM8syCgr5DXnC+p1CGcFcN2XCYHHJLE9D6BcXLa+c535ltWNtbrAg42Qx9/rn9jfW2Ad1k8YNFIf3knq2l7gwfC/JcrRNvkbFUVDIk9pr90zjO4iSjG0FwqZ8/of9qjQBgOfw2G2+2bd7m47q2W1Y9JBnUFdhyeeO2qDmUpKRd4zPO8YDSIqVn5zqmz5OTzaztIrzKH0vMVZ2agidDYauOPafUjbOSbFyGgW38v1PwnMrNAS6HdPkhb/xDOmhLNO7fiWO7FP/ymr7lgOq+ilVl7jzFTpNBykSyqJpX0NCVxwHCOK4gVAfYTKkp2S3waui6cZFy4/d6pt5s88e9AWkp8jLnvbkHhTe/MIWJJJtgOdx3xidgyDHziurqnP6NSoOtxc/HlFuc0PpiMOVIN9+oxg8VnAlyDMn+O6/yRcXpfayo/qKI/qIOfnCyg02ki0EMHmI2EHvgNGxs8qX7ZxuSnaWAEVxbMoXLhEc9uh+tKZ1/Xaid912hY4Jz2NUH/HXo8RxA8Tg1kIRnsOEweKEweLBIv7rHcJ3u4WKmmZtneMwa7L+sdNDp5UtR7FeP2UIFMVBGj3p0V6i11XpmiGPzhYbo4TYKNzYSxw3QLxpgJQcZ8BN+3aU+naU5k/zFhTyuQf5vJ+Fg6e5msvc5KGi7hC7rJoj+aycfOGlGd5wOkHhQEscpVVc7kFlcUwaQstsNDB/mrdDG7m9S76hu9Srg0RjciHPoX9nqX9nCfDJMipquHCUt+MQsYhl1VzeMZ4UMtOGljje+9amOJjJ87hzJF1xdEyT/3i/eZMgOC5YOkcNuYeCBUmrcmxDeoQ7mzX/OJ/9aNM8/KiGf2IcGRP6fMJzyt1lKiMF58q5L7cpy25cf5FGJ7b14hORWxCsFnL2CufKafmVy55ij6+K9CkVy7H8GzupP/mQ0TPeHl3q3E42yxEkLUle86I7pFHZckAIPh9AkvD372x/nknLFsrkmTrGv9a8Y/zXO5Tt5JDuUpBhLX2cKI7wjDISpVXcqZLQZVu3PXSG7ctttsJfIvCYBovjUj3+9A+HRNDiE1ONl3/w4bTIErJsZy5wm/eFFocoYenaCGTRDRbHXz5znCtT1vj4geKwnpFM6ViQjzbaSA0pgI17hG2E3l+YcOSZOkaKY/2PAik76bDh2XuoeM1I5QDUELxsJRUcaWGEIotW2w2fiR4f1dlhSyJ9alhAuuso/9IHxEGv2bd7KSW+ureTfqmM8FxlRdJT5ODDZsvX2xRHYnkeGclyyx7KuTJu6Vr7/Pv0CGRQN+mj569OzDR1reyxc/wzyxykHkqvDtLDk2gty3l3Trg5gMkLos5cUGjjny1w9+1Iyw8eOs2vzVV++VOHi+MGinOWKbS0VZtsY7LFEX1M8s4GuJWiUu7x/3HU1inb0Ggn3njEY9rSoFaBLGPxartitGG34Ykp3psHigO7KihAlvGnfzgqa0xypeFW2qEi/sHXnb9UEov70gxPZMedLciqTcTR3fvG+NqlygAWTPcqJv4vXOSefc9hzlKasMSx8wj/u7ecFWQhPzDeN3UE3WR5q6OwhCP1S6OdePRWv//tnSU9MF7ZF+86yr/5hRk9W/0xx1fbhEUfE+MMAKOzRX3RkyHMeM0ZZO6FGqb9V7CV9jYBKfHyoK7SvHu8pAUNLXF78Yf3HaROx1NTvU0zqnN/7d15mFccsP1ooy0zVZ55M90F1npe32U3Xvi7488fBlPGgC7SW495KG23EhJJIs5QNAqfiNIqbkOesGClhomJiz92kJb6DegiPTih2Qt12vHGI17SHNLXP7eTMtFGofkNHj3L37c4KvhK114dpHef8Zi/xUUjZsY4e47zKtMPqzbZguSBFj3k4Vv4527tpOcI+SFZxoL/dazOoTgjR4M4PD4sX2+b/qozeJ4/u5P0/jxPBJfimIwko0rFStpN+cKSz4mBwuzbvV0IW5BNH+e7hTADRpbx2qf2D/6Plj7UiuNCzU93LYx652u7Yt6mkRt7SSufdSfFRlgZJmdNfaH6DlsLhD+sIA45De0ZIg/06u88QTIu2wpoOZfQ4vCKtXmFC3OPzwk5MHjnSPHdZ9wR9CaN8DyVdTH62H2Un7PMQWpUaUnyW4+GyAM57Vj2tEcx3+q04/d304r6Q1ukIyUrz1R+H/wcnsO8u72R2p1IkbUvG7yM3yfinkVOxd3lgrNkDdHcxjjxzlOelPjQhjY1QV4x1/3Qm86S5lOO/zzT0yeLVjMI/ajJMX2Cn5CWJK981m0pZdCA53QO8t03RjlisNuwdLa7t+qqzXTJHzznbrpd1oxxvjtoppFCW472yRPOVmwoqd6u+OnY/uLih7zJKrRvMrX1eHONfWuBUFHDqVnmRI97x/hq6hCwI4jdhqWPe0ZqHCXJdMmf/NH9/ArHjsP8kB7S85TTSKoC3YFZ8zcdnukVa5oeTIyVX5jmnTLcognQt9fZNQ2IU+XhW3z1Hm7ZN/7yxEXhr4+7tSqjgeQ4+b257iNn+C4ZEu0doVR50Ci7q3/7uY3/5ThMGS5+vdBtWWUA2K1rz159tMxPtOSJKd5Zk3wAOrSRP5qvUxkNcBx6Z0kmLLBW27Y6pExyuf5zQ57Qv7M0f5p3QBer9AVI1Ji4W6HKlZVz7/KOGyj2yJSiLdChU4MGw/v6LM+TUzlSrsZqmDNuCSAzVVaf8bN+o2qKBnHYBLQWZZgAzyE2Wu6aIc+jlmaIOFYJ2Uzj28X1kd30ohVx3c3QckVui61Wx3UnjshuatC6uO7cyh0vq960RTU8j3l3WWv0wBCuO8tBA0mCjjEX63MNPlIDJu8nb+VVmbq5ZsWRGOk5JdcA16w4hvc2Nd1k5VWZurFcQJoYI7fcryLKAa27vD05xesTkZMvlF6kPiprE6yS+iR11PXtSmW535Utq+ZKK7mA35V1JVLZ1PaapLKWC/i5koYX2PR3W1rr78q6EmRXeFtsXeckx8nJccZc6pqNORjhw8TBIMLEwSDCxMEgwsTBIMLEwSDCxMEgwsTBIMLEwSDCxMEgYpn0eVFbeOwAkF6B+MuRLo0uvDZIPAA4vOCuhREAy4hj7Vh4bAAweh9GHFQ+51AnrB+p7bK8jOQa3L0ZSbV6SrU9G9v6K11WwsP/Qkqz9aFYdifcDgAYuxc3HtJ8r/emokrdoAgnI64O2acwep/mu2iBpjhWTcR5l/JH4/dgyJFmR662NPLMCI/2FYASh/IEnMrAoGOavwugjrA2TeJR7wRqAg8G/KEJr+q6kDnUxGBHX2SfRHJN6PP1QjPmqCfvpEZ66cFx6F0+pP69BxBF2B6Zl+EMd+fkQOwaZ53E1tP2vzQtB+nNAojWtbNKn0L0KdRw/t/uxuXwlqWOOoBRB8K6gnoe/TrYp6cysGEYqmP9/3V4MXUbbHQXstMUx8wQ+wHRReIg6Zq7980oHO6o4XybiKe+0m/VglPnxJEs7O2OC0lXD2aU4/btVB1KA5YJSNXgdmDNTShJ0enUVaLV2PgEeAWDxVEVh1MZON4eRW0DH7bnadyyK5hVNg6jxREkCCVxz2Z0Oa/qzJMZmi/egCbzq9Xl2UTYjTDvFfEoduFsGxSm4yK523I0C0ezkFyDtpVwVSGlGik1cF0Eb/wkVqPFcVn7erI61TsAu7X3VjgZybXoXKzhK1NzMTVX843C4V8jcCJTOX5vU4Wep+G6iNNtUZiOigT/8cp4VMYDWf7/jsvH0MOGl8toccTWq+2sNxKt3kJeiSE4GfM+g2DKhO/yBOT3QGE6qmPBy0iqQZdiDPrZyJ7CxdhmynB60b4UnYvR9TwSr6RnepwBgNponEnDuTYoTsWFJPiurNzqdtawwjTBaHE8YFYQao4ytmcjtx/kJoFtaTJKk/FTT4zPw8Djxtwl+xTcDrStQHoFMsuQVklMsMbVoXcRehcBgMSjIh7liRB5SsEp5YC0Kg57euBUO1THAEDCZXQsweCjgblFHcgc9RR1bj/k9lP+yCfg+2EQZPQ7ofDp1v7YeiWvGuXBM1+EuFH/E+ivdJ3g8BJcF+G6qPmLqqEpjj09kDO4WbBdnoDyBOR3x9i9GEbwkU3frNODOU3f7BU1yBzemK6hJLyEJ9Yhpl7DV6risCPb/3fbCozdi4xySDzOpGHzIL/r3DQYPU+H6KcEiZMKuuDb4RqKFJLR+zGiwMDrUesTHuiKjUOU+5wyh82DsK9b6IsE5Muj9HYXJR5ejQurj7X3p0li63F/DjqVwOlFtBs9zmBaDnjZX7xTGSGuE0Q6QTLI+ggz49cCOpbD7UDOIP/fMW6Mz0OnEshAUTpybvA/w+aB6HU6RBLa2fzNdj6PzDIUa89zCBIcGpPTtTH+P9IqAwuZWIvEWlTGA0BNTOAXoboFG543Mzr5QUccxzP945MA7voB7cr8f/cpRFItVk0EALcDx9oj+2Tgd4O8WafXvIA37kpnpCQFdc5myY+K+Ks9snD6LGpCjXWj8XMHAMgox4Mb9N9LF3TcSkmK/4+M8qvKaKBdGTLKA0+zIN3P+n1HnROfjcepDLjtqHPiaBbWjPf3XxxebRmU1gYdy9EYKyRcUvg04RKKUwF1Sa1IRW1JtRhR4O+tlCZjzTiFc8bvMcw1lCbjg0nN+swBFKdiyYxmRxp6K/dsRlydMWVoAR3L0WiEG0cRm9J4UE33IYJR26gDGFmg3GG2ifiP3Xr6nyQ8tmDKUETiUZqMU+0MK0ML6FiORldSnIrzrmae5bzLbzYAtL8Q+lKGjzBpGjr51X70KsKenihqi5oYcDKSatG5GIN/VjaKutE6maMRD8VkBJ1LdzmPuDrURgPAV2MxPg+digEOhenIucF/TsIlVeNt2ScVgtYA/n0j9ncFgJRqzFofTsEVcF3ExF0GX7MlbSvx/MdqT5Y5LL3XP4NJq73RAh1xNFjdtWMA4LJTYeInJ2PibpNS4GFS1NY/mphZZrC1sDzUjFL3s5i8E98Pg9girLH7MHmn2mH6iLNutL9bPuwwbsoPdqYgoSE8FXSN4K8bjZPtro6lqYTmGIIGcby4fI+2nZ/6nURWKXb3QmG6P1mUWIuu5zHkCGK1ZLIjzBW7HbIWnvrSn53TMXuvKs6fz9CK1uSe6j2fQH3gLbEWE36iewvrwMvg9c768WmvCF5G6kWqiZZWNU0wsuiewq6V6RvRodSkewWFiSMkV9zJ3u7Y213tlwYe19/H+WSChpN5GY/9k9IaBbZWNhSxulZR1Guc0WjTm+eQOHqpDm3iUB/LaOZqd117+J1ejo4l6FiCTiVGFqmBUfuvDsKpR2ucmFSLHmf0RLK8rOlemmrQMm5l2ib/iIyrSvN3Bx43bMZeSxqn5dHmzq1m3EULlhFH41AtwzJojjkoehYGZbTWHQtIGUT0iIMZj9aIjlpjloNBRKc4mPFoXeirL2Y5GET0i4MZj9aC7poKy3IwfVifcOooXLfC9GFlwqwdFnMwiBggDmY8rEn49WKM5WD6sBqG1IhhboXpwzoYVRdGxhxMH1bAwFowOCBl+ogsxr5/Db9IrQlzfr6a0QiNZkmrK8tMiJlQetsU8xxMH+ZA7z3TcitNYS6GErSbnxniaIBJxEDMscrmiaMBJpEwMdNZmy2ORphKNBGRAC5i4giAaSUAK4TzVhEHw4KwIXsGESYOBhEmDgYRJg4GESYOBhEmDgYRJg4GESYOBhEmDgYRJg4GESYOBhEmDgaR/wcPCfhgs3wOuwAAAABJRU5ErkJggg==">
+<title>누구나 될 수 있다. 기술사 — 하루 한 줄</title>
+<style>
+:root{--bg:#FFF6E9;--ink:#2B2B3A;--sub:#6B6B7B;--coral:#FF6B4A;--violet:#7B5CFF;--teal:#12B39A;--yellow:#FFC531;--pink:#FF4F8B;--sky:#3BA4FF;
+--mint:#DDF7EE;--lav:#ECE6FF;--peach:#FFE3D6;--skyl:#DCEFFF;--lemon:#FFF3C4;--rose:#FFE0EC}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans CJK KR","Noto Sans KR","Malgun Gothic",sans-serif;font-size:19px;line-height:1.55}
+body.huge{font-size:22px}
+.wrap{max-width:560px;margin:0 auto;padding:12px 14px 110px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 2px 10px}
+.brand{font-weight:800;font-size:.95em;line-height:1.25}
+.brand small{display:block;font-weight:600;color:var(--sub);font-size:.72em}
+.pills{display:flex;gap:6px}
+.pill{background:#fff;border-radius:999px;padding:6px 12px;font-weight:800;box-shadow:0 2px 0 rgba(0,0,0,.06);white-space:nowrap}
+.pill.fire{color:var(--coral)}
+.lvl{background:linear-gradient(135deg,#7B5CFF,#FF4F8B);color:#fff;border-radius:22px;padding:14px 16px;margin-bottom:12px;box-shadow:0 6px 0 rgba(123,92,255,.25)}
+.lvl .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lvl .title{font-size:1.25em;font-weight:900}
+.bar{height:14px;background:rgba(255,255,255,.35);border-radius:9px;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--yellow);border-radius:9px;transition:width .6s}
+.aff{background:var(--lemon);border-radius:16px;padding:10px 14px;margin:0 0 12px;font-weight:700;border:2px dashed #F2C94C}
+.card{background:#fff;border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 5px 0 rgba(0,0,0,.06)}
+.card h2{margin:0 0 10px;font-size:1.08em;display:flex;align-items:center;gap:8px}
+.card h2 .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;color:#fff;font-size:.8em}
+.c1{background:var(--mint)} .c1 .num{background:var(--teal)}
+.c2{background:var(--peach)} .c2 .num{background:var(--coral)}
+.c3{background:var(--lav)} .c3 .num{background:var(--violet)}
+.done-tag{margin-left:auto;font-size:.75em;background:var(--teal);color:#fff;border-radius:999px;padding:2px 10px}
+.flip{perspective:1200px;cursor:pointer;margin:6px 0 10px}
+.flip .inner{position:relative;transition:transform .55s;transform-style:preserve-3d;display:grid;min-height:230px}
+.flip.flipped .inner{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center;background:#fff;border:3px solid #fff;box-shadow:inset 0 0 0 2px rgba(0,0,0,.04)}
+.front{background:linear-gradient(160deg,#ffffff,#F1FFF9);text-align:center;align-items:center}
+.back{transform:rotateY(180deg);background:#fff;justify-content:flex-start}
+.chip{display:inline-block;border-radius:999px;padding:3px 12px;font-size:.78em;font-weight:800;color:#fff;margin-bottom:8px}
+.term{font-size:1.55em;font-weight:900;line-height:1.3;margin:4px 0 10px}
+.hint{color:var(--sub);font-size:.85em}
+.def{font-size:1.02em;font-weight:600;margin:4px 0 10px}
+.src{font-size:.8em;color:var(--sub)}
+.ok-badge{display:inline-block;font-size:.75em;font-weight:800;border-radius:8px;padding:1px 8px;margin-left:4px}
+.v1{background:#DDF7EE;color:#0B7A68}.v0{background:#FFF0C2;color:#8A6400}
+.tip{margin-top:8px;background:var(--skyl);border-radius:12px;padding:8px 10px;font-size:.88em}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;border:0;border-radius:16px;padding:12px 14px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.12);transition:transform .08s}
+button:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.12)}
+.btns button{white-space:nowrap}#ansBtns button{padding:12px 4px;font-size:.92em}.b-ok{background:var(--teal);color:#fff;flex:1}.b-mid{background:var(--yellow);color:#4a3600;flex:1}.b-no{background:var(--coral);color:#fff;flex:1}
+.b-main{background:var(--violet);color:#fff;width:100%}.b-soft{background:#fff;color:var(--ink)}
+.b-coral{background:var(--coral);color:#fff}.b-teal{background:var(--teal);color:#fff}
+.mission{display:flex;gap:12px;align-items:flex-start}
+.mission .ico{font-size:2.2em;line-height:1}
+.mission b{font-size:1.08em}
+.mlevel{font-size:.75em;font-weight:800;border-radius:8px;padding:1px 8px;background:#fff}
+.timer{font-size:1.6em;font-weight:900;text-align:center;margin:8px 0;color:var(--coral)}
+textarea,input[type=text],input[type=date],select{width:100%;font:inherit;border:2px solid rgba(0,0,0,.08);border-radius:14px;padding:10px 12px;background:#fff}
+textarea{min-height:70px;resize:vertical}
+.moods{display:flex;justify-content:space-between;gap:6px;margin:4px 0 10px}
+.moods button{flex:1;font-size:1.7em;padding:8px 0;background:#fff;box-shadow:0 3px 0 rgba(0,0,0,.08)}
+.moods button.sel{background:var(--yellow);transform:scale(1.08)}
+.queue{font-size:.85em;color:var(--sub);margin-bottom:4px}
+.nav{position:fixed;left:0;right:0;bottom:0;background:#fff;display:flex;justify-content:space-around;padding:8px 6px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -4px 14px rgba(0,0,0,.08);z-index:10}
+.nav button{background:none;box-shadow:none;padding:4px 6px;font-size:.72em;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:0;border-radius:12px}
+.nav button span{font-size:1.7em}
+.nav button.on{color:var(--violet);background:var(--lav)}
+.hidden{display:none!important}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.grid .d{aspect-ratio:1;border-radius:7px;background:#EEE9DF;font-size:.6em;display:grid;place-items:center;color:rgba(0,0,0,.45)}
+.grid .l1{background:#BDEFD9}.grid .l2{background:#6FD9B4}.grid .l3{background:#12B39A;color:#fff}.grid .today{outline:3px solid var(--coral)}
+.grid .hd{background:none;font-weight:800;color:var(--sub);font-size:.7em}
+.legend{display:flex;gap:6px;align-items:center;font-size:.75em;color:var(--sub);margin-top:8px}
+.legend i{width:16px;height:16px;border-radius:4px;display:inline-block}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat{background:#fff;border-radius:16px;padding:10px;text-align:center;box-shadow:0 3px 0 rgba(0,0,0,.05)}
+.stat b{display:block;font-size:1.4em}
+.stat small{color:var(--sub);font-size:.75em}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.badge{background:#fff;border-radius:16px;padding:10px 6px;text-align:center;font-size:.75em;font-weight:700}
+.badge .e{font-size:2.1em;display:block}
+.badge.lock{opacity:.35;filter:grayscale(1)}
+.entry{background:#fff;border-radius:16px;padding:12px;margin-bottom:10px;border-left:8px solid var(--violet)}
+.entry .h{display:flex;justify-content:space-between;font-weight:800}
+.entry .m{margin-top:4px}
+.clist .it{background:#fff;border-radius:14px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.clist .st{font-size:.75em;border-radius:8px;padding:2px 8px;white-space:nowrap}
+.toast{position:fixed;left:50%;top:18px;transform:translateX(-50%) translateY(-120px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:16px;font-weight:800;z-index:50;transition:transform .35s;max-width:90%;text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.warn{background:#FFE0E0;border:2px solid #FF8A8A;border-radius:14px;padding:10px 12px;margin-bottom:12px;font-size:.85em;font-weight:700}
+.switch{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:6px 12px;font-weight:800;font-size:.85em;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.switch.on{background:var(--yellow)}
+.sect{font-weight:900;font-size:1.1em;margin:16px 2px 8px}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.confetti i{position:absolute;top:-20px;width:10px;height:14px;border-radius:3px;animation:fall 1.6s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.small{font-size:.8em;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="storageWarn" class="warn hidden">⚠ 이 화면에서는 기록이 저장되지 않을 수 있어요(파일 미리보기 모드). 안내서의 '아이폰에서 여는 법'을 따라 주시고, 오늘 기록은 ⚙️설정 → 내보내기로 백업하세요.</div>
+  <div class="top">
+    <div class="brand">누구나 될 수 있다. 기술사<small id="today"></small></div>
+    <div class="pills"><span class="pill fire" id="streakPill">🔥 0일</span></div>
+  </div>
+
+  <!-- 오늘 -->
+  <section id="tab-today">
+    <div class="lvl">
+      <div class="row"><div><div class="small" style="color:#fff;opacity:.85">나의 호칭</div><div class="title" id="lvTitle">견습생</div></div><div style="text-align:right"><div class="small" style="color:#fff;opacity:.85">경험치</div><b id="xpTxt">0 XP</b></div></div>
+      <div class="bar"><i id="xpBar" style="width:0%"></i></div>
+      <div class="small" style="color:#fff;opacity:.9;margin-top:4px" id="xpNext"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px">
+      <div class="aff" id="aff" style="margin:0;flex:1"></div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:10px"><button class="switch" id="oneMinBtn">⏱️ 바쁜 날 1분 모드: 끔</button></div>
+
+    <div class="card c1" id="cardBox">
+      <h2><span class="num">1</span>오늘의 한 줄 <span class="done-tag hidden" id="t1">완료</span></h2>
+      <div class="queue" id="queueInfo"></div>
+      <div class="flip" id="flip">
+        <div class="inner">
+          <div class="face front"><span class="chip" id="fChip">산안법</span><div class="term" id="fTerm"></div><div class="hint">👀 먼저 머릿속으로 뜻을 떠올려 보세요<br>그다음 <b>탭해서 뒤집기</b></div></div>
+          <div class="face back"><div><span class="chip" id="bChip"></span></div><div class="term" style="font-size:1.15em;margin:0 0 6px" id="bTerm"></div><div class="def" id="bDef"></div><div class="src" id="bSrc"></div><div class="tip hidden" id="bTip"></div></div>
+        </div>
+      </div>
+      <div class="btns hidden" id="ansBtns">
+        <button class="b-ok" data-a="ok">😀 알았다</button><button class="b-mid" data-a="mid">🤔 헷갈림</button><button class="b-no" data-a="no">😅 몰랐다</button>
+      </div>
+      <div id="cardDone" class="hidden" style="text-align:center">
+        <div style="font-size:1.05em;font-weight:800;margin:6px 0">🎉 오늘 카드 완료! 불꽃이 지켜졌어요</div>
+        <button class="b-soft" id="moreCard">➕ 한 장 더 (보너스)</button>
+      </div>
+    </div>
+
+    <div id="oneMinMsg" class="card hidden" style="background:var(--lemon);text-align:center;font-weight:800">⏱️ 1분 모드: 카드 한 장이면 오늘도 연속일 유지!<br><span class="small">"우석아, 오늘은 이것만 해도 한 날이다."</span></div>
+
+    <div class="card c2" id="missionBox">
+      <h2><span class="num">2</span>오늘의 미션 (5분) <span class="done-tag hidden" id="t2">완료</span></h2>
+      <div class="mission"><div class="ico" id="mIco"></div><div><b id="mTitle"></b> <span class="mlevel" id="mLevel"></span><div id="mDesc" style="margin-top:4px"></div><div class="small" id="mWhy" style="margin-top:4px"></div></div></div>
+      <div class="timer hidden" id="timer">05:00</div>
+      <div class="btns" style="margin-top:10px"><button class="b-soft" id="timerBtn">⏱️ 5분 타이머</button><button class="b-coral" id="missionDone" style="flex:1">✅ 미션 완료</button></div>
+      <textarea id="mNote" placeholder="(선택) 미션 한 줄 메모 — 예: 비계 사진 3곳에 배치함" style="margin-top:10px;min-height:54px"></textarea>
+    </div>
+
+    <div class="card c3" id="moodBox">
+      <h2><span class="num">3</span>나의 한 마디 <span class="done-tag hidden" id="t3">저장됨</span></h2>
+      <div class="small">오늘 기분을 탭하고, 한 줄만 남겨 주세요. 이 기록이 책이 됩니다. (실제로 있었던 일만!)</div>
+      <div class="moods" id="moods"><button data-m="1">😫</button><button data-m="2">😕</button><button data-m="3">😐</button><button data-m="4">🙂</button><button data-m="5">😄</button></div>
+      <textarea id="memo" placeholder="예: 점심 먹고 졸렸지만 카드 2장. 히빙이랑 보일링이 계속 헷갈림."></textarea>
+      <button class="b-main" id="saveMemo" style="margin-top:10px">💾 오늘의 한 마디 저장</button>
+    </div>
+  </section>
+
+  <!-- 잔디 -->
+  <section id="tab-grass" class="hidden">
+    <div class="sect">🌱 나의 잔디밭</div>
+    <div class="stats"><div class="stat"><b id="sStreak">0</b><small>연속일 🔥</small></div><div class="stat"><b id="sBest">0</b><small>최장 연속</small></div><div class="stat"><b id="sDays">0</b><small>참여한 날</small></div></div>
+    <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><button class="b-soft" id="prevM">◀</button><b id="mLabel"></b><button class="b-soft" id="nextM">▶</button></div>
+      <div class="grid" id="cal"></div>
+      <div class="legend">적음 <i style="background:#EEE9DF"></i><i style="background:#BDEFD9"></i><i style="background:#6FD9B4"></i><i style="background:#12B39A"></i> 많음 · 카드/미션/한마디 1개당 한 칸 진해져요</div>
+    </div>
+    <div class="stats"><div class="stat"><b id="sCards">0</b><small>만난 카드</small></div><div class="stat"><b id="sMaster">0</b><small>정복한 복습카드</small></div><div class="stat"><b id="sMis">0</b><small>완료 미션</small></div></div>
+    <div class="sect">🏅 배지</div>
+    <div class="badges" id="badges"></div>
+  </section>
+
+  <!-- 기록 -->
+  <section id="tab-log" class="hidden">
+    <div class="sect">📖 합격기록서 원고함</div>
+    <div class="small" style="margin-bottom:8px">매일의 한 마디가 쌓이는 곳. 책을 쓸 때 기억 대신 이 기록을 씁니다. 지어낸 기록은 넣지 않기로 약속!</div>
+    <button class="b-soft" id="csvBtn" style="margin-bottom:10px">📄 기록 CSV로 내보내기 (엑셀용)</button>
+    <div id="logList"></div>
+  </section>
+
+  <!-- 카드 -->
+  <section id="tab-cards" class="hidden">
+    <div class="sect">🃏 카드 보관함</div>
+    <div class="card c1">
+      <h2>✍️ 내 카드 만들기</h2>
+      <input type="text" id="nTerm" placeholder="용어 (예: 안전보건총괄책임자)" style="margin-bottom:8px">
+      <textarea id="nDef" placeholder="한 문장 정의"></textarea>
+      <input type="text" id="nSrc" placeholder="출처 (예: 산업안전보건법 제62조) — 원문 확인 후 적기" style="margin:8px 0">
+      <select id="nCat" style="margin-bottom:8px"><option>내 카드</option><option>산안법</option><option>안전보건규칙</option><option>중대재해처벌법</option><option>건설기술진흥법</option><option>이론·관리</option><option>토질·가시설</option><option>소방</option></select>
+      <label class="small"><input type="checkbox" id="nVer"> 국가법령정보센터 원문과 대조했어요</label>
+      <button class="b-teal" id="addCard" style="width:100%;margin-top:8px">➕ 카드 추가 (다음 '새 카드' 순서에 들어가요)</button>
+    </div>
+    <input type="text" id="cSearch" placeholder="🔎 카드 검색" style="margin-bottom:10px">
+    <div class="clist" id="cList"></div>
+  </section>
+
+  <!-- 설정 -->
+  <section id="tab-set" class="hidden">
+    <div class="sect">⚙️ 설정 · 백업</div>
+    <div class="card"><h2>💾 백업 (매주 일요일 추천)</h2>
+      <div class="small">기록은 이 기기의 브라우저 안에만 저장돼요. 휴대폰을 바꾸거나 브라우저 데이터를 지우면 사라지니, 백업 파일을 파일 앱·구글드라이브·메일에 보관하세요.</div>
+      <div class="btns" style="margin-top:10px"><button class="b-teal" id="expBtn" style="flex:1">⬇️ 내보내기 (JSON 파일)</button><button class="b-soft" id="copyBtn" style="flex:1">📋 백업 글자 복사</button></div>
+      <textarea id="expText" class="hidden" style="margin-top:8px;font-size:.7em" readonly></textarea>
+    </div>
+    <div class="card"><h2>⬆️ 가져오기 (복원)</h2>
+      <input type="file" id="impFile" accept=".json,application/json,text/plain">
+      <textarea id="impText" placeholder="또는 백업 글자를 여기에 붙여넣기" style="margin-top:8px;font-size:.75em"></textarea>
+      <button class="b-coral" id="impBtn" style="width:100%;margin-top:8px">복원하기 (현재 기록을 덮어씀)</button>
+    </div>
+    <div class="card"><h2>🔠 화면</h2>
+      <button class="b-soft" id="bigBtn" style="width:100%">글자 더 크게 / 원래대로</button>
+    </div>
+    <div class="card"><h2>ℹ️ 이 앱에 대해</h2>
+      <div class="small">카드 <b id="cardCount"></b>장 내장. ✔원문 대조 = 국가법령정보센터 조문(2026년 7월 판본 기준)과 대조함. ⚠원문 확인 = 이론·교재 내용이거나 세부 고시를 따로 확인해야 하는 카드. 법령은 개정되니 시험 전 반드시 최신 원문을 확인하세요.<br><br>틀리거나 헷갈린 카드는 +1·3·7·21일 간격으로 다시 나와요(간격 반복). 21일 복습까지 맞히면 '정복'!</div>
+      <button class="b-soft" id="resetBtn" style="width:100%;margin-top:10px;color:#c0392b">⚠ 모든 기록 지우기</button>
+    </div>
+  </section>
+</div>
+
+<nav class="nav">
+  <button data-t="today" class="on"><span>🏠</span>오늘</button>
+  <button data-t="grass"><span>🌱</span>잔디</button>
+  <button data-t="log"><span>📖</span>기록</button>
+  <button data-t="cards"><span>🃏</span>카드</button>
+  <button data-t="set"><span>⚙️</span>설정</button>
+</nav>
+<div class="toast" id="toast"></div>
+<div class="confetti" id="confetti"></div>
+
+<script>
+(function(){
+"use strict";
+var BUILTIN=[{"id": "b01", "c": "산안법", "t": "산업재해", "d": "노무를 제공하는 사람이 업무에 관계되는 건설물·설비·원재료·가스·증기·분진 등에 의하거나 작업 또는 그 밖의 업무로 인하여 사망 또는 부상하거나 질병에 걸리는 것.", "s": "산업안전보건법 제2조제1호", "v": 1, "tip": "답안 개요 첫 줄에 정의를 쓰면 기본점이 확보됩니다."}, {"id": "b02", "c": "안전보건규칙", "t": "안전난간의 구조", "d": "상부 난간대·중간 난간대·발끝막이판·난간기둥으로 구성. 상부 난간대 90cm 이상, 발끝막이판 10cm 이상, 난간대 지름 2.7cm 이상, 가장 취약한 지점·방향 100kg 이상 하중에 견딜 것.", "s": "안전보건규칙 제13조", "v": 1, "tip": "상부 120cm 이상이면 중간 난간대 2단 이상, 상하 간격 60cm 이하."}, {"id": "b03", "c": "중대재해처벌법", "t": "중대산업재해", "d": "산업재해 중 ①사망자 1명 이상 ②동일한 사고로 6개월 이상 치료가 필요한 부상자 2명 이상 ③동일한 유해요인으로 급성중독 등 직업성 질병자 1년 이내 3명 이상.", "s": "중대재해처벌법 제2조제2호", "v": 1, "tip": ""}, {"id": "b04", "c": "건설기술진흥법", "t": "안전관리계획 대상 공사", "d": "1·2종 시설물, 지하 10m 이상 굴착, 폭발물 사용(20m 내 시설물·100m 내 가축), 10층 이상 16층 미만 건축물, 10층 이상 리모델링·해체, 천공기(10m 이상)·항타항발기·타워크레인 사용, 관계전문가 확인 대상 가설구조물 사용 공사 등.", "s": "건설기술진흥법 시행령 제98조제1항", "v": 1, "tip": "유해위험방지계획서와 통합 작성 가능하다는 점도 함께!"}, {"id": "b05", "c": "이론·관리", "t": "하인리히 법칙 (1:29:300)", "d": "1건의 중상해 뒤에는 29건의 경상해와 300건의 무상해 사고가 있다는 재해 구성비율. 작은 사고를 줄여야 큰 사고를 막는다는 근거.", "s": "H.W. Heinrich (1931), 산업재해 예방 이론", "v": 0, "tip": "교재로 확인"}, {"id": "b06", "c": "토질·가시설", "t": "히빙 (Heaving)", "d": "연약 점토지반 굴착 시 흙막이 배면 흙의 중량이 굴착저면 지지력보다 커져 배면 흙이 돌아 들어오며 굴착저면이 부풀어 오르는 현상.", "s": "토질역학 일반", "v": 0, "tip": "점토=히빙, 모래=보일링"}, {"id": "b07", "c": "산안법", "t": "중대재해 (산안법)", "d": "①사망자 1명 이상 ②3개월 이상 요양이 필요한 부상자 동시 2명 이상 ③부상자 또는 직업성 질병자 동시 10명 이상 발생한 재해.", "s": "산업안전보건법 제2조제2호, 시행규칙 제3조", "v": 1, "tip": "중대재해처벌법의 '중대산업재해'(6개월·1년 이내 3명)와 비교표로 정리하세요."}, {"id": "b08", "c": "안전보건규칙", "t": "낙하물 방지망", "d": "높이 10m 이내마다 설치, 내민 길이는 벽면으로부터 2m 이상, 수평면과의 각도 20도 이상 30도 이하.", "s": "안전보건규칙 제14조제3항", "v": 1, "tip": "10 · 2 · 20~30 — 세 숫자를 그림 한 장에!"}, {"id": "b09", "c": "중대재해처벌법", "t": "중대시민재해", "d": "특정 원료·제조물, 공중이용시설·공중교통수단의 설계·제조·설치·관리상 결함으로 발생한 재해 중 사망 1명 이상, 2개월 이상 치료 부상자 10명 이상, 3개월 이상 치료 질병자 10명 이상.", "s": "중대재해처벌법 제2조제3호", "v": 1, "tip": ""}, {"id": "b10", "c": "건설기술진흥법", "t": "가설구조물 구조적 안전성 확인", "d": "높이 31m 이상 비계, 브라켓 비계, 작업발판 일체형 거푸집 또는 높이 5m 이상 거푸집·동바리, 터널 지보공 또는 높이 2m 이상 흙막이 지보공, 동력 이용 가설구조물 등은 관계전문가 확인 필요.", "s": "건설기술진흥법 시행령 제101조의2제1항", "v": 1, "tip": "31 · 5 · 2 · 10"}, {"id": "b11", "c": "이론·관리", "t": "버드의 법칙 (1:10:30:600)", "d": "중상 1 : 경상 10 : 무상해 사고(물적 손실) 30 : 상해도 손실도 없는 사고(아차사고) 600의 비율.", "s": "F.E. Bird (1969), 손실제어 이론", "v": 0, "tip": "교재로 확인"}, {"id": "b12", "c": "토질·가시설", "t": "보일링 (Boiling)", "d": "사질토 지반에서 흙막이 안팎의 수위차로 상향 침투수압이 커져 굴착저면의 모래가 끓어오르듯 솟는 현상.", "s": "토질역학 일반", "v": 0, "tip": ""}, {"id": "b13", "c": "산안법", "t": "위험성평가", "d": "유해·위험요인을 찾아내어 위험성의 크기가 허용 가능한 수준인지 결정하고, 위험성을 줄이기 위한 개선대책을 수립·이행하는 것. 근로자를 참여시켜야 함.", "s": "산업안전보건법 제36조", "v": 1, "tip": "절차·방법·시기의 세부는 고용노동부 고시 「사업장 위험성평가에 관한 지침」 원문 확인."}, {"id": "b14", "c": "안전보건규칙", "t": "가설통로의 구조", "d": "경사 30도 이하(계단 등 예외), 15도 초과 시 미끄럼 방지 구조, 추락 위험 장소 안전난간, 수직갱 15m 이상이면 10m 이내마다 계단참, 높이 8m 이상 비계다리는 7m 이내마다 계단참.", "s": "안전보건규칙 제23조", "v": 1, "tip": ""}, {"id": "b15", "c": "중대재해처벌법", "t": "경영책임자등", "d": "사업을 대표하고 사업을 총괄하는 권한과 책임이 있는 사람 또는 이에 준하여 안전보건 업무를 담당하는 사람, 그리고 중앙행정기관·지자체·지방공기업·공공기관의 장.", "s": "중대재해처벌법 제2조제9호", "v": 1, "tip": ""}, {"id": "b16", "c": "건설기술진흥법", "t": "관계전문가 (가설구조물)", "d": "건축구조·토목구조·토질 및 기초·건설기계 직무범위 중 적합한 분야의 등록 기술사로서, 해당 공사의 시공자에게 고용되지 않은 기술사.", "s": "건설기술진흥법 시행령 제101조의2제2항", "v": 1, "tip": ""}, {"id": "b17", "c": "이론·관리", "t": "재해예방 4원칙", "d": "손실우연의 원칙, 원인계기(원인연계)의 원칙, 예방가능의 원칙, 대책선정의 원칙.", "s": "산업안전관리론 일반 이론", "v": 0, "tip": "교재로 확인"}, {"id": "b18", "c": "토질·가시설", "t": "파이핑 (Piping)", "d": "침투수에 의해 토립자가 유실되면서 물길(파이프) 모양의 통로가 생기고 점점 확대되는 현상.", "s": "토질역학 일반", "v": 0, "tip": ""}, {"id": "b19", "c": "산안법", "t": "근로자의 작업중지권", "d": "근로자는 산업재해가 발생할 급박한 위험이 있으면 작업을 중지하고 대피할 수 있고, 지체 없이 관리감독자등에게 보고해야 함. 합리적 이유가 있으면 불리한 처우 금지.", "s": "산업안전보건법 제52조", "v": 1, "tip": ""}, {"id": "b20", "c": "안전보건규칙", "t": "사다리식 통로", "d": "폭 30cm 이상, 발판과 벽 사이 15cm 이상, 상단은 걸친 지점보다 60cm 이상, 길이 10m 이상이면 5m 이내마다 계단참, 기울기 75도 이하(고정식 90도 이하).", "s": "안전보건규칙 제24조", "v": 1, "tip": "고정식 7m 이상: 2.5m 지점부터 등받이울 등."}, {"id": "b21", "c": "중대재해처벌법", "t": "종사자 (중대재해처벌법)", "d": "근로기준법상 근로자, 계약 형식과 관계없이 대가를 목적으로 노무를 제공하는 자, 여러 차례 도급 시 각 단계의 수급인과 그 근로자·노무제공자.", "s": "중대재해처벌법 제2조제7호", "v": 1, "tip": "산안법의 '근로자'보다 넓다는 점이 포인트."}, {"id": "b22", "c": "건설기술진흥법", "t": "설계의 안전성 검토 (DFS)", "d": "발주청은 안전관리계획 대상 공사의 실시설계 시 시공과정 안전성 확보를 위해 국토안전관리원에 설계의 안전성 검토를 의뢰(설계안전검토보고서 제출, 20일 이내 통보).", "s": "건설기술진흥법 시행령 제75조의2", "v": 1, "tip": "Design for Safety — 산안법 '설계안전보건대장'과 비교 출제 단골."}, {"id": "b23", "c": "이론·관리", "t": "4M 위험요인", "d": "Man(인간), Machine(기계·설비), Media(작업방법·환경), Management(관리) — 재해 원인을 네 측면으로 분석하는 틀.", "s": "산업안전관리론 일반 이론", "v": 0, "tip": "사고 사례 역설계(장치 5)의 기본 틀!"}, {"id": "b24", "c": "토질·가시설", "t": "흙막이 계측관리", "d": "지중경사계·지하수위계·간극수압계·하중계·변형률계·지표침하계·건물경사계·균열계 등으로 변위와 응력을 측정해 붕괴 징후를 미리 파악하는 관리.", "s": "가시설 일반", "v": 0, "tip": "계측기 이름은 그림 한 장(단면도)으로!"}, {"id": "b25", "c": "산안법", "t": "사업주의 작업중지", "d": "산업재해가 발생할 급박한 위험이 있을 때 사업주는 즉시 작업을 중지시키고 근로자를 작업장소에서 대피시키는 등 필요한 조치를 해야 함.", "s": "산업안전보건법 제51조", "v": 1, "tip": ""}, {"id": "b26", "c": "안전보건규칙", "t": "강풍 시 타워크레인 작업중지", "d": "순간풍속 초당 10m 초과 시 설치·수리·점검·해체 작업 중지, 초당 15m 초과 시 운전작업 중지.", "s": "안전보건규칙 제37조제2항", "v": 1, "tip": "10은 '손대는 일', 15는 '돌리는 일'."}, {"id": "b27", "c": "중대재해처벌법", "t": "중대재해처벌법 적용범위", "d": "상시 근로자 5명 미만 사업 또는 사업장의 사업주(개인사업주) 또는 경영책임자등에게는 중대산업재해 장의 규정을 적용하지 않음.", "s": "중대재해처벌법 제3조", "v": 1, "tip": ""}, {"id": "b28", "c": "건설기술진흥법", "t": "건설공사 안전점검", "d": "공사기간 동안 매일 자체안전점검, 고시 시기·횟수에 따른 정기안전점검, 결함 발견 시 정밀안전점검, 1·2종 시설물 준공 직전 점검, 1년 이상 중단 후 재개 전 점검.", "s": "건설기술진흥법 시행령 제100조", "v": 1, "tip": ""}, {"id": "b29", "c": "이론·관리", "t": "3E 대책", "d": "Engineering(기술적), Education(교육적), Enforcement(관리·규제적) 대책. 하베이(Harvey)의 안전대책 분류.", "s": "산업안전관리론 일반 이론", "v": 0, "tip": "교재로 확인"}, {"id": "b30", "c": "토질·가시설", "t": "콘크리트 측압 증가 요인", "d": "타설 속도가 빠를수록, 슬럼프가 클수록, 온도가 낮을수록, 진동 다짐이 과할수록, 부재 단면이 클수록 거푸집 측압이 커짐.", "s": "콘크리트공학 일반", "v": 0, "tip": "교재로 확인"}, {"id": "b31", "c": "산안법", "t": "도급인의 안전·보건조치", "d": "관계수급인 근로자가 도급인의 사업장에서 작업할 때, 도급인은 안전·보건 시설 설치 등 필요한 조치를 해야 함(보호구 착용 지시 등 작업행동에 관한 직접 조치는 제외).", "s": "산업안전보건법 제63조", "v": 1, "tip": ""}, {"id": "b32", "c": "안전보건규칙", "t": "사전조사 및 작업계획서", "d": "타워크레인 설치·해체, 차량계 건설기계, 굴착면 높이 2m 이상 굴착, 터널굴착, 교량, 해체, 중량물 취급 등 작업 시 사전조사 후 작업계획서를 작성하고 근로자에게 알려야 함.", "s": "안전보건규칙 제38조", "v": 1, "tip": ""}, {"id": "b33", "c": "중대재해처벌법", "t": "안전 및 보건 확보의무", "d": "①인력·예산 등 안전보건관리체계 구축·이행 ②재해 발생 시 재발방지 대책 ③행정기관 개선·시정명령 이행 ④안전·보건 관계 법령 의무이행에 필요한 관리상 조치.", "s": "중대재해처벌법 제4조", "v": 1, "tip": "체-재-명-법 4글자로 인출 연습!"}, {"id": "b34", "c": "건설기술진흥법", "t": "중대건설현장사고", "d": "하나의 건설사고로 사망자 3명 이상, 부상자 10명 이상, 또는 건설 중이거나 완공된 시설물이 붕괴·전도되어 재시공이 필요한 경우.", "s": "건설기술진흥법 시행령 제105조제3항", "v": 1, "tip": "산안법 중대재해 · 중처법 중대산업재해와 3단 비교표!"}, {"id": "b35", "c": "이론·관리", "t": "스위스 치즈 모델", "d": "여러 겹의 방호막(치즈 조각)에 각각 구멍(결함)이 있고, 그 구멍들이 한 줄로 겹칠 때 사고가 발생한다는 모델.", "s": "J. Reason (1990), Human Error", "v": 0, "tip": ""}, {"id": "b36", "c": "산안법", "t": "안전 및 보건에 관한 협의체", "d": "도급인과 그 수급인 전원으로 구성. 작업 시작 시간, 연락방법, 대피방법, 위험성평가, 작업공정 조정 등을 협의하고 매월 1회 이상 회의·기록 보존.", "s": "산업안전보건법 제64조, 시행규칙 제79조", "v": 1, "tip": ""}, {"id": "b37", "c": "안전보건규칙", "t": "추락방호망", "d": "작업발판 설치가 곤란할 때 설치. 작업면에서 망까지 수직거리 10m 이하, 수평 설치·처짐은 짧은 변 길이의 12% 이상, 바깥쪽 설치 시 내민 길이 벽면에서 3m 이상.", "s": "안전보건규칙 제42조제2항", "v": 1, "tip": "작업발판 → 추락방호망 → 안전대: 우선순위 3단계."}, {"id": "b38", "c": "중대재해처벌법", "t": "안전보건관리체계 구축 9가지", "d": "목표·경영방침, 전담조직, 유해·위험요인 확인·개선 절차(반기 점검), 예산, 책임자 권한·예산·평가, 안전관리자 등 배치, 종사자 의견청취, 중대재해 대응 매뉴얼, 도급 시 평가기준·절차.", "s": "중대재해처벌법 시행령 제4조", "v": 1, "tip": ""}, {"id": "b39", "c": "건설기술진흥법", "t": "건설사고 통보 사항", "d": "건설사고를 알게 된 건설공사 참여자는 사고발생 일시·장소, 사고발생 경위, 조치사항, 향후 조치계획을 발주청 및 인·허가기관의 장에게 통보.", "s": "건설기술진흥법 시행령 제105조제1항", "v": 1, "tip": ""}, {"id": "b40", "c": "이론·관리", "t": "휴먼에러 분류 (Reason)", "d": "의도하지 않은 행동: 실수(slip)·망각(lapse) / 의도한 행동: 착오(mistake)·위반(violation).", "s": "J. Reason (1990), Human Error", "v": 0, "tip": ""}, {"id": "b41", "c": "산안법", "t": "안전보건대장 (발주자)", "d": "총공사금액 50억원 이상 건설공사 발주자는 계획단계 기본안전보건대장 → 설계단계 설계안전보건대장 → 시공단계 공사안전보건대장 작성·확인 조치를 해야 함.", "s": "산업안전보건법 제67조, 시행령 제55조", "v": 1, "tip": "계획-설계-시공 3단계 흐름도를 그림으로 그리면 이중부호화!"}, {"id": "b42", "c": "안전보건규칙", "t": "이동식 사다리 작업", "d": "작업발판·추락방호망이 곤란할 때 3개 이상 버팀대 구조의 이동식 사다리 사용 가능. 바닥에서 높이 3.5m 이하 장소에서만, 최상부 발판과 그 하단 디딤대에 올라서지 않을 것.", "s": "안전보건규칙 제42조제4항", "v": 1, "tip": ""}, {"id": "b43", "c": "중대재해처벌법", "t": "중대재해처벌법 처벌 (개인)", "d": "사망 결과: 1년 이상의 징역 또는 10억원 이하의 벌금(병과 가능). 부상·질병 결과: 7년 이하의 징역 또는 1억원 이하의 벌금. 5년 내 재범 시 2분의 1까지 가중.", "s": "중대재해처벌법 제6조", "v": 1, "tip": ""}, {"id": "b44", "c": "이론·관리", "t": "Fail-safe", "d": "기계·설비에 고장이나 이상이 생겨도 안전한 쪽으로 작동하거나 정지하도록 설계하는 개념.", "s": "인간공학·안전설계 일반 이론", "v": 0, "tip": ""}, {"id": "b45", "c": "산안법", "t": "안전보건조정자", "d": "같은 장소에서 2개 이상 건설공사를 도급한 발주자가 작업 혼재로 인한 재해 예방을 위해 두는 사람. 각 공사금액 합이 50억원 이상일 때. 건설안전기술사도 자격 요건 중 하나.", "s": "산업안전보건법 제68조, 시행령 제56조", "v": 1, "tip": "보스가 합격하면 맡을 수 있는 역할 중 하나입니다."}, {"id": "b46", "c": "안전보건규칙", "t": "작업발판의 구조", "d": "비계 높이 2m 이상 작업장소: 작업발판 폭 40cm 이상, 발판재료 간 틈 3cm 이하, 추락 위험 장소 안전난간, 둘 이상의 지지물에 고정.", "s": "안전보건규칙 제56조", "v": 1, "tip": "40 · 3 — 발판의 두 숫자."}, {"id": "b47", "c": "중대재해처벌법", "t": "양벌규정 (중대산업재해)", "d": "법인·기관에 사망 결과 50억원 이하, 부상·질병 결과 10억원 이하 벌금. 상당한 주의와 감독을 게을리하지 않았으면 면책.", "s": "중대재해처벌법 제7조", "v": 1, "tip": ""}, {"id": "b48", "c": "이론·관리", "t": "Fool-proof", "d": "사람이 실수(오조작)를 해도 사고로 이어지지 않도록 설계하는 개념(예: 인터록, 방호덮개).", "s": "인간공학·안전설계 일반 이론", "v": 0, "tip": ""}, {"id": "b49", "c": "산안법", "t": "산업안전보건관리비", "d": "건설공사발주자 등이 산업재해 예방을 위해 고용노동부 고시에 따라 도급금액 또는 사업비에 계상하는 비용. 산업재해 예방 외의 목적으로 사용 금지.", "s": "산업안전보건법 제72조", "v": 1, "tip": "계상·사용기준 세부는 고용노동부 고시 원문 확인."}, {"id": "b50", "c": "안전보건규칙", "t": "강관비계의 구조", "d": "비계기둥 간격 띠장 방향 1.85m 이하·장선 방향 1.5m 이하, 띠장 간격 2.0m 이하, 최상부에서 31m 아래 비계기둥은 2개 강관으로 묶기, 기둥 간 적재하중 400kg 이하.", "s": "안전보건규칙 제60조", "v": 1, "tip": ""}, {"id": "b51", "c": "중대재해처벌법", "t": "징벌적 손해배상", "d": "고의 또는 중대한 과실로 의무를 위반해 중대재해를 발생하게 한 경우 손해액의 5배를 넘지 않는 범위에서 배상책임.", "s": "중대재해처벌법 제15조", "v": 1, "tip": ""}, {"id": "b52", "c": "이론·관리", "t": "TBM (Tool Box Meeting)", "d": "작업 시작 전 작업반장 중심으로 짧게(대개 5~10분) 그날 작업의 위험요인과 안전대책을 공유하는 현장 회의.", "s": "현장 안전관리 일반 / 산안법 제36조제4항 '작업 전 안전점검회의' 연계", "v": 0, "tip": ""}, {"id": "b53", "c": "산안법", "t": "유해위험방지계획서", "d": "일정 규모 이상 사업·설비·건설공사의 유해·위험 방지 사항을 적은 계획서. 고용노동부장관에게 제출해 심사를 받음. 건설공사는 건설안전 분야 자격자 의견을 들어야 함.", "s": "산업안전보건법 제42조", "v": 1, "tip": ""}, {"id": "b54", "c": "안전보건규칙", "t": "강관비계 조립 준수사항", "d": "밑받침철물·깔판 등으로 침하 방지, 접속부·교차부는 부속철물로 접속, 교차 가새로 보강, 벽이음·버팀 설치(조립 간격은 별표 5), 가공전로 근접 시 이설·절연 방호.", "s": "안전보건규칙 제59조", "v": 1, "tip": "벽이음 간격 수치는 별표 5 원문 확인."}, {"id": "b55", "c": "이론·관리", "t": "위험예지훈련 4라운드", "d": "1R 현상파악 → 2R 본질추구 → 3R 대책수립 → 4R 목표설정.", "s": "안전교육 일반 이론", "v": 0, "tip": "교재로 확인"}, {"id": "b56", "c": "산안법", "t": "유해위험방지계획서 대상 건설공사", "d": "지상높이 31m 이상 또는 연면적 3만㎡ 이상 건축물, 연면적 5천㎡ 이상 특정시설(문화·집회, 판매, 종교, 종합병원, 관광숙박, 지하도상가, 냉동·냉장창고 등), 최대 지간 50m 이상 다리, 터널, 댐, 깊이 10m 이상 굴착공사 등.", "s": "산업안전보건법 시행령 제42조제3항", "v": 1, "tip": "숫자 4개만 먼저: 31m · 3만㎡ · 50m · 10m"}, {"id": "b57", "c": "안전보건규칙", "t": "말비계", "d": "지주부재 하단 미끄럼 방지, 양측 끝부분에 올라서서 작업 금지, 지주부재와 수평면 기울기 75도 이하, 높이 2m 초과 시 작업발판 폭 40cm 이상.", "s": "안전보건규칙 제67조", "v": 1, "tip": ""}, {"id": "b58", "c": "이론·관리", "t": "아차사고 (Near miss)", "d": "작업 중 재해로 이어질 뻔했으나 인적·물적 피해 없이 끝난 사건. 버드 법칙의 600에 해당하는 '경고 신호'.", "s": "현장 안전관리 일반", "v": 0, "tip": ""}, {"id": "b59", "c": "산안법", "t": "안전보건진단", "d": "산업재해를 예방하기 위하여 잠재적 위험성을 발견하고 그 개선대책을 수립할 목적으로 조사·평가하는 것.", "s": "산업안전보건법 제2조제12호", "v": 1, "tip": ""}, {"id": "b60", "c": "안전보건규칙", "t": "이동식비계", "d": "바퀴는 브레이크·쐐기로 고정 후 견고한 시설물 고정 또는 아웃트리거 설치, 최상부 작업 시 안전난간, 작업발판 위 사다리·받침대 사용 금지, 최대적재하중 250kg 이하.", "s": "안전보건규칙 제68조", "v": 1, "tip": ""}, {"id": "b61", "c": "이론·관리", "t": "도수율", "d": "재해건수 ÷ 연근로시간수 × 1,000,000. 100만 근로시간당 재해 발생 건수.", "s": "재해통계 일반", "v": 0, "tip": ""}, {"id": "b62", "c": "산안법", "t": "건설공사발주자", "d": "건설공사를 도급하는 자로서 건설공사의 시공을 주도하여 총괄·관리하지 아니하는 자(도급받은 공사를 다시 도급하는 자는 제외).", "s": "산업안전보건법 제2조제10호", "v": 1, "tip": ""}, {"id": "b63", "c": "안전보건규칙", "t": "와이어로프 사용 금지 기준", "d": "이음매가 있는 것, 한 꼬임에서 끊어진 소선 수 10% 이상, 지름 감소가 공칭지름의 7% 초과, 꼬인 것, 심한 변형·부식, 열·전기충격 손상. (양중기에도 준용)", "s": "안전보건규칙 제63조제1항제1호, 제166조", "v": 1, "tip": "10%와 7% — 짝으로 외우기."}, {"id": "b64", "c": "이론·관리", "t": "강도율", "d": "근로손실일수 ÷ 연근로시간수 × 1,000. 1,000 근로시간당 근로손실일수.", "s": "재해통계 일반", "v": 0, "tip": ""}, {"id": "b65", "c": "산안법", "t": "관계수급인", "d": "도급이 여러 단계에 걸쳐 체결된 경우에 각 단계별로 도급받은 사업주 전부.", "s": "산업안전보건법 제2조제9호", "v": 1, "tip": ""}, {"id": "b66", "c": "안전보건규칙", "t": "파이프 서포트 동바리", "d": "3개 이상 이어서 사용 금지, 이을 때는 4개 이상 볼트 또는 전용철물, 높이 3.5m 초과 시 높이 2m 이내마다 수평연결재를 2개 방향으로 설치.", "s": "안전보건규칙 제332조의2제1호", "v": 1, "tip": "3 · 4 · 3.5 · 2"}, {"id": "b67", "c": "이론·관리", "t": "연천인율", "d": "연간 재해자수 ÷ 연평균 근로자수 × 1,000. 근로자 1,000명당 1년간 재해자 수 (≈ 도수율 × 2.4).", "s": "재해통계 일반", "v": 0, "tip": ""}, {"id": "b68", "c": "안전보건규칙", "t": "시스템 동바리", "d": "규격화된 수직재·수평재·가새재를 현장 조립하는 동바리. 수평재는 수직재와 직각, 조립도에 따라 가새재 설치, 수직재와 받침철물 겹침길이는 받침철물 전체길이의 1/3 이상.", "s": "안전보건규칙 제332조의2제4호", "v": 1, "tip": ""}, {"id": "b69", "c": "이론·관리", "t": "안전보건경영시스템 (KOSHA-MS·ISO 45001)", "d": "조직이 안전보건 방침·목표를 정하고 계획(P)-실행(D)-점검(C)-개선(A)을 반복하는 체계. KOSHA-MS는 안전보건공단 인증, ISO 45001은 2018년 제정 국제표준.", "s": "KOSHA / ISO 45001:2018", "v": 0, "tip": ""}, {"id": "b70", "c": "안전보건규칙", "t": "굴착면의 기울기", "d": "모래 1:1.8, 연암 및 풍화암 1:1.0, 경암 1:0.5, 그 밖의 흙 1:1.2 (굴착면 높이에 대한 수평거리의 비율).", "s": "안전보건규칙 제339조, 별표 11 (2023.11.14 개정)", "v": 1, "tip": "2023년 개정 이후 기준. 옛 교재 수치와 다를 수 있어요."}, {"id": "b71", "c": "안전보건규칙", "t": "굴착면 빗물 대비", "d": "비가 올 경우를 대비하여 측구를 설치하거나 굴착경사면에 비닐을 덮는 등 빗물 침투에 의한 붕괴재해 예방 조치를 해야 함.", "s": "안전보건규칙 제339조제2항", "v": 1, "tip": "우기 안전대책 답안의 단골 문장."}, {"id": "b72", "c": "안전보건규칙", "t": "화재감시자", "d": "작업반경 11m 이내 가연성물질이 있는 장소 등에서 용접·용단 시 지정·배치. 가연성물질 확인, 가스 검지·경보장치 작동 확인, 화재 시 대피 유도. 확성기·조명·방연장비 지급.", "s": "안전보건규칙 제241조의2", "v": 1, "tip": "소방기술사로 넘어가는 다리 카드!"}, {"id": "b73", "c": "안전보건규칙", "t": "적정공기", "d": "산소 18% 이상 23.5% 미만, 이산화탄소 1.5% 미만, 일산화탄소 30ppm 미만, 황화수소 10ppm 미만인 수준의 공기.", "s": "안전보건규칙 제618조제3호", "v": 1, "tip": "18 · 23.5 · 1.5 · 30 · 10"}, {"id": "b74", "c": "안전보건규칙", "t": "산소결핍", "d": "공기 중의 산소농도가 18% 미만인 상태. 밀폐공간은 산소결핍·유해가스로 질식·화재·폭발 위험이 있는 장소(별표 18).", "s": "안전보건규칙 제618조", "v": 1, "tip": ""}];
+var CATCOL={"산안법":"#FF6B4A","안전보건규칙":"#3BA4FF","중대재해처벌법":"#7B5CFF","건설기술진흥법":"#12B39A","이론·관리":"#FF4F8B","토질·가시설":"#E39B00","내 카드":"#555577","소방":"#E2483D"};
+var MISSIONS=[
+ {id:"walk",ico:"🚶",t:"걷는 답안",lv:"근거: 중간~강함",d:"산책하면서 오늘 카드 용어로 '개요 → 원인 → 대책 → 결론'을 음성메모에 1분 동안 말해 보세요. 집에 와서 한 줄만 손으로 적으면 끝!",w:"인출 연습 + 걷기와 아이디어 생성(Oppezzo & Schwartz 2014) + 가르치듯 말하기"},
+ {id:"palace",ico:"📸",t:"현장 사진 기억궁전",lv:"근거: 중간",d:"아이폰 사진에서 현장 사진 1장을 골라, 오늘 카드의 숫자·조건 3개를 사진 속 3곳(발판·난간·기둥 등)에 '놓아' 보세요. '기억궁전' 앨범에 저장.",w:"장소법 메타분석 g≈0.65(Twomey & Kroneisen 2021) + 이중부호화. 보안·초상권 없는 사진만!"},
+ {id:"ai",ico:"🤖",t:"AI 채점관 3인 위원회",lv:"피드백: 강함 / AI 정확성: 실험적",d:"오늘 카드로 답안 반 장을 손으로 쓰고 사진을 찍어 무료 AI에게 '교수·현장 기술사·공무원' 세 역할로 10점 만점 채점 + 가장 큰 결점 1개를 물어보세요.",w:"피드백 효과(Hattie & Timperley 2007). AI가 말한 법령 내용은 반드시 국가법령정보센터 원문과 대조!"},
+ {id:"interview",ico:"🎤",t:"미래 합격자 인터뷰",lv:"근거: 중간 / 조합: 실험적",d:"'합격자 안우석 인터뷰' 질문 하나에 3줄로 답해 보세요. 오늘의 질문: ",w:"결과보다 과정을 상상하기(Pham & Taylor 1999) + 장애물 예상(WOOP, Oettingen 2012)",qs:["가장 포기하고 싶었던 날, 무엇을 했나요?","낙방 소식을 들은 다음 날 아침에 무엇을 했나요?","바쁜 날 1분 모드는 실제로 어떻게 했나요?","공부가 가장 잘 된 장소와 시간은 언제였나요?","현장 경험이 답안에 도움이 된 순간은?","가족에게 가장 고마웠던 순간은?"]},
+ {id:"case",ico:"📰",t:"사고 사례 역설계",lv:"근거: 중간",d:"KOSHA 재해사례나 건설안전 사고사례 1건을 읽고 3분 동안 '개요 1줄 → 원인(4M) → 대책(법적·기술적·관리적) → 내 소견 1줄'로 다시 써 보세요.",w:"생성 효과(Slamecka & Graf 1978) + 정교화 + 보스의 현장 경험(결정성 지능)"},
+ {id:"body",ico:"⏱️",t:"400분 몸 만들기",lv:"근거: 중간~강함",d:"5분 타이머를 켜고 오늘 카드의 정의 + 그림 1개를 손글씨로 반 장 쓰기. 몇 줄 썼는지, 손목·어깨 느낌을 메모하세요. (매달 마지막 토요일은 400분 실전 모의!)",w:"시험과 비슷하게 연습할수록 실전에서 잘 꺼냄(Morris 외 1977). 손글씨 400분은 체력 종목."},
+ {id:"worry",ico:"📝",t:"걱정 쓰기 + 두근거림 재해석",lv:"근거: 중간",d:"2분 동안 시험·공부 걱정을 종이에 모두 적고 찢어 버리세요. 그리고 소리 내어: '우석아, 이 두근거림은 몸이 준비하는 신호다.'",w:"걱정 글쓰기(Ramirez & Beilock 2011) + 각성 재해석(Jamieson 외 2010) + 이름 부르는 혼잣말(Kross 외 2014)"}
+];
+var AFF=["우석아, 오늘은 카드 한 장이면 된다.","우석아, 막히면 1분 모드. 이틀 연속만 안 빼면 된다.","우석아, 현장에서 본 것이 곧 답안이다.","우석아, 틀린 카드는 내일 다시 만나면 된다.","우석아, 산책도 공부다. 오늘도 한 바퀴.","우석아, 완벽한 답안 말고 한 장의 답안.","우석아, 잠도 공부다. 오늘은 일찍 자자."];
+var LEVELS=[[0,"견습생","🧢"],[300,"수습 안전인","🦺"],[800,"현장 반장","👷"],[1600,"기사","🛠️"],[3000,"수석 기사","📐"],[5000,"기술사 후보","🎓"],[8000,"기술사","🏆"]];
+var BADGES=[
+ ["first","🌟","첫 카드"],["s3","🔥","3일 연속"],["s7","🔥🔥","7일 연속"],["s21","⭐","21일 연속"],["s66","🏗️","66일 습관 완공"],["s100","💯","100일 연속"],
+ ["c30","🃏","카드 30장"],["c60","🗂️","카드 60장"],["m10","🎯","미션 10회"],["walk5","🚶","걷는 답안 5회"],["log30","📖","한 마디 30개"],["master10","🧠","복습카드 10장 정복"],
+ ["onemin","⏱️","1분 모드로 지킨 날"],["custom1","✍️","내 카드 첫 제작"],["backup","💾","첫 백업"]
+];
+var INTERVALS=[1,3,7,21];
+var KEY="gisulsa_v2";
+var memStore=null, canStore=true;
+try{localStorage.setItem("__t","1");localStorage.removeItem("__t");}catch(e){canStore=false;}
+function load(){var raw=null;try{raw=canStore?localStorage.getItem(KEY):memStore;}catch(e){raw=memStore;}
+ if(raw){try{return normalize(JSON.parse(raw));}catch(e){}} return normalize({});}
+function normalize(s){s.v=2;s.xp=s.xp||0;s.days=s.days||{};s.srs=s.srs||{};s.seen=s.seen||[];s.custom=s.custom||[];s.badges=s.badges||{};s.settings=s.settings||{};s.start=s.start||todayStr();return s;}
+var S=load();
+function save(){var raw=JSON.stringify(S);try{if(canStore)localStorage.setItem(KEY,raw);else memStore=raw;}catch(e){memStore=raw;canStore=false;showWarn();}}
+function showWarn(){document.getElementById("storageWarn").classList.remove("hidden");}
+if(!canStore)showWarn();
+
+function pad(n){return (n<10?"0":"")+n;}
+function ds(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+function todayStr(){return ds(new Date());}
+function addDays(str,n){var p=str.split("-");var d=new Date(+p[0],+p[1]-1,+p[2]);d.setDate(d.getDate()+n);return ds(d);}
+function allCards(){return BUILTIN.concat(S.custom);}
+function cardById(id){var a=allCards();for(var i=0;i<a.length;i++)if(a[i].id===id)return a[i];return null;}
+function day(t){t=t||todayStr();if(!S.days[t])S.days[t]={cards:[],res:{},mission:null,mood:0,memo:"",oneMin:false,bonus:false};return S.days[t];}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+/* ----- 카드 큐 ----- */
+function dueList(){var t=todayStr(),D=day(),out=[];for(var id in S.srs){var r=S.srs[id];if(!r.mastered&&r.due<=t&&D.cards.indexOf(id)<0&&cardById(id))out.push(id);}out.sort(function(a,b){return S.srs[a].due<S.srs[b].due?-1:1;});return out;}
+function nextNew(){var a=allCards();
+ // 내 카드(custom)는 먼저 소개
+ for(var i=0;i<S.custom.length;i++)if(S.seen.indexOf(S.custom[i].id)<0)return S.custom[i].id;
+ for(var j=0;j<a.length;j++)if(S.seen.indexOf(a[j].id)<0)return a[j].id; return null;}
+var current=null, flipped=false, wantMore=false;
+function pickCard(){var D=day();var due=dueList();
+ if(due.length){current={id:due[0],review:true};return;}
+ if(!D.newDone||wantMore){var n=nextNew();if(n){current={id:n,review:false};return;}}
+ current=null;}
+
+function renderCard(){pickCard();var D=day();var due=dueList();
+ var qi=document.getElementById("queueInfo");
+ qi.textContent=(due.length?"🔁 복습 카드 "+due.length+"장 대기 · ":"")+"오늘 만난 카드 "+D.cards.length+"장";
+ var f=document.getElementById("flip");f.classList.remove("flipped");flipped=false;
+ document.getElementById("ansBtns").classList.add("hidden");
+ if(!current){f.classList.add("hidden");document.getElementById("cardDone").classList.remove("hidden");document.getElementById("t1").classList.toggle("hidden",D.cards.length===0);
+   document.getElementById("moreCard").classList.toggle("hidden",!nextNew());return;}
+ f.classList.remove("hidden");document.getElementById("cardDone").classList.add("hidden");
+ var c=cardById(current.id);var col=CATCOL[c.c]||"#555";
+ ["fChip","bChip"].forEach(function(k){var el=document.getElementById(k);el.textContent=(current.review?"🔁 복습 · ":"")+c.c;el.style.background=col;});
+ document.getElementById("fTerm").textContent=c.t;document.getElementById("bTerm").textContent=c.t;
+ document.getElementById("bDef").textContent=c.d;
+ document.getElementById("bSrc").innerHTML="📚 "+esc(c.s)+(c.v?' <span class="ok-badge v1">✔ 원문 대조</span>':' <span class="ok-badge v0">⚠ 원문 확인</span>');
+ var tip=document.getElementById("bTip");if(c.tip){tip.textContent="💡 "+c.tip;tip.classList.remove("hidden");}else tip.classList.add("hidden");
+ document.getElementById("t1").classList.toggle("hidden",D.cards.length===0);
+}
+function answer(a){if(!current)return;var id=current.id,D=day(),t=todayStr();
+ if(S.seen.indexOf(id)<0)S.seen.push(id);
+ D.cards.push(id);D.res[id]=a;if(!current.review)D.newDone=true;
+ var r=S.srs[id];
+ if(a==="ok"){ if(current.review&&r){r.box=(r.box||0)+1;if(r.box>=INTERVALS.length){r.mastered=true;r.mDate=t;toast("🧠 정복! '"+cardById(id).t+"'");}else r.due=addDays(t,INTERVALS[r.box]);} gain(15); }
+ else { var box=(a==="mid"&&r)?(r.box||0):0; S.srs[id]={box:box,due:addDays(t,INTERVALS[box]),mastered:false}; gain(10); }
+ if(D.cards.length===1){toast("🔥 오늘 불꽃 ON! 연속 "+streak()+"일");if(D.oneMin)D.oneMinSaved=true;}
+ wantMore=false;checkFull();save();renderAll();}
+
+/* ----- 미션 ----- */
+function dayIndex(){var p=S.start.split("-"),q=todayStr().split("-");return Math.round((new Date(+q[0],+q[1]-1,+q[2])-new Date(+p[0],+p[1]-1,+p[2]))/864e5);}
+function todayMission(){var i=((dayIndex()%MISSIONS.length)+MISSIONS.length)%MISSIONS.length;return MISSIONS[i];}
+function renderMission(){var m=todayMission(),D=day();
+ document.getElementById("mIco").textContent=m.ico;document.getElementById("mTitle").textContent=m.t;document.getElementById("mLevel").textContent=m.lv;
+ var desc=m.d;if(m.qs)desc+="「"+m.qs[dayIndex()%m.qs.length]+"」";
+ document.getElementById("mDesc").textContent=desc;document.getElementById("mWhy").textContent="📎 "+m.w;
+ var done=!!(D.mission&&D.mission.done);document.getElementById("t2").classList.toggle("hidden",!done);
+ var b=document.getElementById("missionDone");b.textContent=done?"✅ 완료함 (메모 수정)":"✅ 미션 완료";
+ if(done&&document.activeElement!==document.getElementById("mNote"))document.getElementById("mNote").value=D.mission.note||"";}
+function missionDone(){var D=day(),m=todayMission(),first=!(D.mission&&D.mission.done);
+ D.mission={id:m.id,done:true,note:document.getElementById("mNote").value.trim()};
+ if(first){gain(30);toast("🎯 미션 완료! +30 XP");}else toast("메모 저장됨");checkFull();save();renderAll();}
+var tmr=null;
+function timerToggle(){var el=document.getElementById("timer"),b=document.getElementById("timerBtn");
+ if(tmr){clearInterval(tmr);tmr=null;el.classList.add("hidden");b.textContent="⏱️ 5분 타이머";return;}
+ var left=300;el.classList.remove("hidden");el.textContent="05:00";b.textContent="⏹ 멈춤";
+ tmr=setInterval(function(){left--;el.textContent=pad(Math.floor(left/60))+":"+pad(left%60);if(left<=0){clearInterval(tmr);tmr=null;el.textContent="⏰ 5분 끝! 잘했어요";b.textContent="⏱️ 5분 타이머";try{navigator.vibrate&&navigator.vibrate(300);}catch(e){}}},1000);}
+
+/* ----- 한 마디 ----- */
+var selMood=0;
+function renderMood(){var D=day();if(!selMood)selMood=D.mood||0;
+ Array.prototype.forEach.call(document.querySelectorAll("#moods button"),function(b){b.classList.toggle("sel",+b.dataset.m===selMood);});
+ if(document.activeElement!==document.getElementById("memo"))document.getElementById("memo").value=D.memo||"";
+ document.getElementById("t3").classList.toggle("hidden",!(D.mood||D.memo));}
+function saveMemo(){var D=day(),first=!(D.mood||D.memo);var memo=document.getElementById("memo").value.trim();
+ if(!selMood&&!memo){toast("기분을 탭하거나 한 줄을 적어 주세요");return;}
+ D.mood=selMood;D.memo=memo;D.memoTs=new Date().toISOString();
+ if(first){gain(20);toast("📖 책 원고 한 줄 저장! +20 XP");}else toast("수정 저장됨");checkFull();save();renderAll();}
+
+function checkFull(){var D=day();if(!D.bonus&&D.cards.length&&D.mission&&D.mission.done&&(D.mood||D.memo)){D.bonus=true;gain(20);setTimeout(function(){toast("🌈 오늘 3종 완주! 보너스 +20 XP");confetti();},900);}}
+
+/* ----- XP / 레벨 / 연속일 ----- */
+function level(){var x=S.xp,cur=LEVELS[0],nxt=null;for(var i=0;i<LEVELS.length;i++){if(x>=LEVELS[i][0]){cur=LEVELS[i];nxt=LEVELS[i+1]||null;}}return {cur:cur,nxt:nxt};}
+function gain(n){var before=level().cur[1];S.xp+=n;var after=level().cur;if(after[1]!==before){setTimeout(function(){toast(after[2]+" 레벨 업! 이제 '"+after[1]+"'");confetti();},1400);}}
+function active(t){var d=S.days[t];return !!(d&&d.cards&&d.cards.length);}
+function streak(){var t=todayStr(),n=0;if(!active(t))t=addDays(t,-1);while(active(t)){n++;t=addDays(t,-1);}return n;}
+function bestStreak(){var ks=Object.keys(S.days).filter(active).sort(),best=0,run=0,prev=null;ks.forEach(function(k){run=(prev&&addDays(prev,1)===k)?run+1:1;if(run>best)best=run;prev=k;});return best;}
+function stats(){var mis=0,walk=0,logs=0,onemin=0;for(var k in S.days){var d=S.days[k];if(d.mission&&d.mission.done){mis++;if(d.mission.id==="walk")walk++;}if(d.mood||d.memo)logs++;if(d.oneMin&&active(k))onemin++;}
+ var mastered=0;for(var id in S.srs)if(S.srs[id].mastered)mastered++;return {mis:mis,walk:walk,logs:logs,onemin:onemin,mastered:mastered,seen:S.seen.length,days:Object.keys(S.days).filter(active).length};}
+function checkBadges(){var st=stats(),sk=Math.max(streak(),bestStreak()),t=todayStr(),cond={first:st.seen>=1,s3:sk>=3,s7:sk>=7,s21:sk>=21,s66:sk>=66,s100:sk>=100,c30:st.seen>=30,c60:st.seen>=60,m10:st.mis>=10,walk5:st.walk>=5,log30:st.logs>=30,master10:st.mastered>=10,onemin:st.onemin>=1,custom1:S.custom.length>=1,backup:!!S.settings.backedUp};
+ BADGES.forEach(function(b){if(cond[b[0]]&&!S.badges[b[0]]){S.badges[b[0]]=t;setTimeout(function(){toast("🏅 새 배지: "+b[1]+" "+b[2]);confetti();},2000);}});}
+
+/* ----- 렌더 ----- */
+function renderHeader(){var now=new Date();var wd="일월화수목금토"[now.getDay()];
+ document.getElementById("today").textContent=now.getFullYear()+"년 "+(now.getMonth()+1)+"월 "+now.getDate()+"일 ("+wd+") · "+(dayIndex()+1)+"일째";
+ var sk=streak();document.getElementById("streakPill").textContent="🔥 "+sk+"일"+(active(todayStr())?"":" · 오늘 아직");
+ var L=level();document.getElementById("lvTitle").textContent=L.cur[2]+" "+L.cur[1];document.getElementById("xpTxt").textContent=S.xp+" XP";
+ var pct=L.nxt?Math.round((S.xp-L.cur[0])/(L.nxt[0]-L.cur[0])*100):100;document.getElementById("xpBar").style.width=pct+"%";
+ document.getElementById("xpNext").textContent=L.nxt?("다음 호칭 '"+L.nxt[1]+"'까지 "+(L.nxt[0]-S.xp)+" XP"):"최고 호칭 달성! 이제 진짜 시험장으로 🏆";
+ document.getElementById("aff").textContent="💬 "+AFF[((dayIndex()%AFF.length)+AFF.length)%AFF.length];
+ var D=day();var om=document.getElementById("oneMinBtn");om.textContent="⏱️ 바쁜 날 1분 모드: "+(D.oneMin?"켬":"끔");om.classList.toggle("on",!!D.oneMin);
+ document.getElementById("missionBox").classList.toggle("hidden",!!D.oneMin);document.getElementById("moodBox").classList.toggle("hidden",!!D.oneMin);document.getElementById("oneMinMsg").classList.toggle("hidden",!D.oneMin);
+ document.body.classList.toggle("huge",!!S.settings.big);}
+var calMonth=null;
+function renderGrass(){var st=stats();document.getElementById("sStreak").textContent=streak();document.getElementById("sBest").textContent=bestStreak();document.getElementById("sDays").textContent=st.days;
+ document.getElementById("sCards").textContent=st.seen;document.getElementById("sMaster").textContent=st.mastered;document.getElementById("sMis").textContent=st.mis;
+ if(!calMonth){var n=new Date();calMonth=[n.getFullYear(),n.getMonth()];}
+ var y=calMonth[0],m=calMonth[1];document.getElementById("mLabel").textContent=y+"년 "+(m+1)+"월";
+ var h="";"일월화수목금토".split("").forEach(function(w){h+='<div class="d hd">'+w+'</div>';});
+ var first=new Date(y,m,1).getDay(),last=new Date(y,m+1,0).getDate(),t=todayStr();
+ for(var i=0;i<first;i++)h+='<div class="d" style="background:none"></div>';
+ for(var dd=1;dd<=last;dd++){var k=y+"-"+pad(m+1)+"-"+pad(dd),d=S.days[k],lv=0;if(d){lv=(d.cards&&d.cards.length?1:0)+(d.mission&&d.mission.done?1:0)+((d.mood||d.memo)?1:0);}
+  h+='<div class="d l'+lv+(k===t?' today':'')+'">'+dd+'</div>';}
+ document.getElementById("cal").innerHTML=h;
+ var bh="";BADGES.forEach(function(b){var got=S.badges[b[0]];bh+='<div class="badge'+(got?'':' lock')+'"><span class="e">'+b[1]+'</span>'+b[2]+(got?'<br><span class="small">'+got.slice(5)+'</span>':'')+'</div>';});
+ document.getElementById("badges").innerHTML=bh;}
+var MO=["","😫","😕","😐","🙂","😄"];
+function renderLog(){var ks=Object.keys(S.days).sort().reverse(),h="";
+ ks.forEach(function(k){var d=S.days[k];if(!(d.cards.length||d.memo||d.mood||(d.mission&&d.mission.done)))return;
+  var mis=d.mission&&d.mission.done?(MISSIONS.filter(function(m){return m.id===d.mission.id;})[0]||{}).t:"";
+  h+='<div class="entry"><div class="h"><span>'+k+'</span><span>'+(MO[d.mood]||"")+'</span></div><div class="small">🃏 카드 '+d.cards.length+'장'+(mis?' · 🎯 '+esc(mis):'')+(d.oneMin?' · ⏱️1분 모드':'')+'</div>'+(d.memo?'<div class="m">'+esc(d.memo)+'</div>':'')+(d.mission&&d.mission.note?'<div class="small">미션 메모: '+esc(d.mission.note)+'</div>':'')+'</div>';});
+ document.getElementById("logList").innerHTML=h||'<div class="small">아직 기록이 없어요. 오늘의 한 마디부터!</div>';}
+function renderCards(){var q=(document.getElementById("cSearch").value||"").trim(),h="",a=allCards();
+ document.getElementById("cardCount").textContent=a.length;
+ a.forEach(function(c){if(q&&(c.t+c.d+c.c).indexOf(q)<0)return;var r=S.srs[c.id],st,bg;
+  if(r&&r.mastered){st="🧠 정복";bg="#DDF7EE";}else if(r){st="🔁 "+r.due.slice(5);bg="#FFF0C2";}else if(S.seen.indexOf(c.id)>=0){st="😀 알았음";bg="#DCEFFF";}else{st="새 카드";bg="#eee";}
+  h+='<div class="it"><div><b>'+esc(c.t)+'</b><div class="small">'+esc(c.c)+(c.v?' · ✔':' · ⚠')+'</div></div><div style="display:flex;gap:6px;align-items:center"><span class="st" style="background:'+bg+'">'+st+'</span>'+(c.mine?'<button class="b-soft" style="padding:4px 8px" data-del="'+c.id+'">🗑</button>':'')+'</div></div>';});
+ document.getElementById("cList").innerHTML=h;}
+function renderAll(){renderHeader();renderCard();renderMission();renderMood();checkBadges();save();
+ if(!document.getElementById("tab-grass").classList.contains("hidden"))renderGrass();
+ if(!document.getElementById("tab-log").classList.contains("hidden"))renderLog();
+ if(!document.getElementById("tab-cards").classList.contains("hidden"))renderCards();}
+
+/* ----- 효과 ----- */
+var tt=null;function toast(m){var el=document.getElementById("toast");el.textContent=m;el.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){el.classList.remove("show");},2200);}
+function confetti(){var box=document.getElementById("confetti"),cols=["#FF6B4A","#7B5CFF","#12B39A","#FFC531","#FF4F8B","#3BA4FF"];for(var i=0;i<40;i++){var p=document.createElement("i");p.style.left=Math.random()*100+"%";p.style.background=cols[i%cols.length];p.style.animationDelay=(Math.random()*.5)+"s";box.appendChild(p);}setTimeout(function(){box.innerHTML="";},2300);}
+
+/* ----- 백업 ----- */
+function exportJSON(){var data=JSON.stringify(S,null,1);var name="기술사_백업_"+todayStr()+".json";
+ try{var blob=new Blob([data],{type:"application/json"});var u=URL.createObjectURL(blob);var a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(u);a.remove();},1500);}catch(e){}
+ var ta=document.getElementById("expText");ta.value=data;ta.classList.remove("hidden");S.settings.backedUp=todayStr();save();checkBadges();toast("💾 백업 파일을 만들었어요");}
+function copyJSON(){var ta=document.getElementById("expText");ta.value=JSON.stringify(S);ta.classList.remove("hidden");ta.select();var ok=false;
+ try{if(navigator.clipboard){navigator.clipboard.writeText(ta.value);ok=true;}}catch(e){} try{ok=document.execCommand("copy")||ok;}catch(e){}
+ S.settings.backedUp=todayStr();save();checkBadges();toast(ok?"📋 복사됨 — 메모 앱에 붙여넣어 보관하세요":"아래 글자를 길게 눌러 전체 복사하세요");}
+function importText(txt){try{var o=JSON.parse(txt);if(!o||typeof o!=="object"||!o.days)throw 0;if(!confirm("현재 기록을 백업 내용으로 덮어쓸까요?"))return;S=normalize(o);save();toast("✅ 복원 완료");renderAll();}catch(e){toast("❌ 백업 형식이 아니에요");}}
+function exportCSV(){var rows=[["날짜","카드수","알았다","헷갈림","몰랐다","미션","미션메모","기분(1-5)","한마디","1분모드"]];
+ Object.keys(S.days).sort().forEach(function(k){var d=S.days[k],c={ok:0,mid:0,no:0};for(var id in d.res)c[d.res[id]]=(c[d.res[id]]||0)+1;
+  rows.push([k,d.cards.length,c.ok,c.mid,c.no,d.mission&&d.mission.done?d.mission.id:"",d.mission?d.mission.note||"":"",d.mood||"",d.memo||"",d.oneMin?"O":""]);});
+ var csv="\ufeff"+rows.map(function(r){return r.map(function(v){v=String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}).join(",");}).join("\n");
+ try{var blob=new Blob([csv],{type:"text/csv"});var u=URL.createObjectURL(blob);var a=document.createElement("a");a.href=u;a.download="기술사_기록_"+todayStr()+".csv";document.body.appendChild(a);a.click();setTimeout(function(){a.remove();},1000);}catch(e){}
+ toast("📄 CSV를 만들었어요");}
+
+/* ----- 이벤트 ----- */
+document.getElementById("flip").addEventListener("click",function(){if(!current)return;flipped=!flipped;this.classList.toggle("flipped",flipped);if(flipped)document.getElementById("ansBtns").classList.remove("hidden");});
+Array.prototype.forEach.call(document.querySelectorAll("#ansBtns button"),function(b){b.addEventListener("click",function(){answer(b.dataset.a);});});
+document.getElementById("moreCard").addEventListener("click",function(){wantMore=true;renderCard();});
+document.getElementById("missionDone").addEventListener("click",missionDone);
+document.getElementById("timerBtn").addEventListener("click",timerToggle);
+Array.prototype.forEach.call(document.querySelectorAll("#moods button"),function(b){b.addEventListener("click",function(){selMood=+b.dataset.m;renderMood();});});
+document.getElementById("saveMemo").addEventListener("click",saveMemo);
+document.getElementById("oneMinBtn").addEventListener("click",function(){var D=day();D.oneMin=!D.oneMin;save();renderAll();toast(D.oneMin?"⏱️ 1분 모드: 카드 한 장만 하면 돼요":"전체 모드로 돌아왔어요");});
+Array.prototype.forEach.call(document.querySelectorAll(".nav button"),function(b){b.addEventListener("click",function(){
+ Array.prototype.forEach.call(document.querySelectorAll(".nav button"),function(x){x.classList.toggle("on",x===b);});
+ ["today","grass","log","cards","set"].forEach(function(t){document.getElementById("tab-"+t).classList.toggle("hidden",t!==b.dataset.t);});
+ if(b.dataset.t==="grass")renderGrass();if(b.dataset.t==="log")renderLog();if(b.dataset.t==="cards"||b.dataset.t==="set")renderCards();window.scrollTo(0,0);});});
+document.getElementById("prevM").addEventListener("click",function(){calMonth[1]--;if(calMonth[1]<0){calMonth[1]=11;calMonth[0]--;}renderGrass();});
+document.getElementById("nextM").addEventListener("click",function(){calMonth[1]++;if(calMonth[1]>11){calMonth[1]=0;calMonth[0]++;}renderGrass();});
+document.getElementById("cSearch").addEventListener("input",renderCards);
+document.getElementById("addCard").addEventListener("click",function(){var t=document.getElementById("nTerm").value.trim(),d=document.getElementById("nDef").value.trim();
+ if(!t||!d){toast("용어와 정의를 적어 주세요");return;}
+ S.custom.push({id:"my"+Date.now(),c:document.getElementById("nCat").value,t:t,d:d,s:document.getElementById("nSrc").value.trim()||"내가 만든 카드",v:document.getElementById("nVer").checked?1:0,tip:"",mine:1});
+ ["nTerm","nDef","nSrc"].forEach(function(k){document.getElementById(k).value="";});document.getElementById("nVer").checked=false;
+ gain(10);save();renderAll();renderCards();toast("✍️ 내 카드 추가! +10 XP");});
+document.getElementById("cList").addEventListener("click",function(e){var id=e.target.getAttribute("data-del");if(!id)return;if(!confirm("이 카드를 지울까요?"))return;S.custom=S.custom.filter(function(c){return c.id!==id;});delete S.srs[id];save();renderCards();});
+document.getElementById("expBtn").addEventListener("click",exportJSON);
+document.getElementById("copyBtn").addEventListener("click",copyJSON);
+document.getElementById("csvBtn").addEventListener("click",exportCSV);
+document.getElementById("impBtn").addEventListener("click",function(){var f=document.getElementById("impFile").files[0];if(f){var r=new FileReader();r.onload=function(){importText(r.result);};r.readAsText(f);}else importText(document.getElementById("impText").value);});
+document.getElementById("bigBtn").addEventListener("click",function(){S.settings.big=!S.settings.big;save();renderHeader();});
+document.getElementById("resetBtn").addEventListener("click",function(){if(confirm("정말 모든 기록을 지울까요? (먼저 백업을 권해요)")&&confirm("마지막 확인: 지우면 되돌릴 수 없어요")){S=normalize({});save();renderAll();toast("초기화했어요");}});
+window.__app={state:function(){return S;},streak:streak,setState:function(o){S=normalize(o);save();renderAll();}};
+renderAll();
+})();
+</script>
+</body>
+</html>
