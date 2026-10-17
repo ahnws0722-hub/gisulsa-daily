@@ -269,7 +269,7 @@ function addDays(str,n){var p=str.split("-");var d=new Date(+p[0],+p[1]-1,+p[2])
 function allCards(){return BUILTIN.concat(S.custom);}
 function cardById(id){var a=allCards();for(var i=0;i<a.length;i++)if(a[i].id===id)return a[i];return null;}
 function day(t){t=t||todayStr();if(!S.days[t])S.days[t]={cards:[],res:{},mission:null,mood:0,memo:"",oneMin:false,bonus:false};return S.days[t];}
-function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&","<":"<",">":">",'"':"""}[c];});}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"\u0026amp;","<":"\u0026lt;",">":"\u0026gt;",'"':"\u0026quot;"}[c];});}
 
 /* ----- 카드 큐 ----- */
 function dueList(){var t=todayStr(),D=day(),out=[];for(var id in S.srs){var r=S.srs[id];if(!r.mastered&&r.due<=t&&D.cards.indexOf(id)<0&&cardById(id))out.push(id);}out.sort(function(a,b){return S.srs[a].due<S.srs[b].due?-1:1;});return out;}
